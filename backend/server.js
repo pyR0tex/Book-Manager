@@ -10,9 +10,9 @@ app.use(express.json());
 
 // in memory database
 let books = [
-    { id: 0, title: 'The Great Gatsby', author: 'Scott F. Fitzgerald', year: '1925', genre: 'Fiction' }
+    { id: 1, title: 'The Great Gatsby', author: 'Scott F. Fitzgerald', year: '1925', genre: 'Fiction' }
 ];
-let next_id = 1;
+let next_id = 2;
 // Routes
 app.get('/', (req, res) => {
     res.send('book-manager api is up and running');
@@ -57,7 +57,7 @@ app.put("/books/:id", (req, res) => {
     const id = Number(req.params.id);
     const data = req.body;
     console.log(`PUT /books/:${id}\n`, data);
-    
+
     //find the book by id
     const book = books.find(b => b.id === id);
     if(!book) {
@@ -91,7 +91,7 @@ app.delete("/books/:id", (req, res) => {
     const book_idx = books.indexOf(book);
     books.splice(book_idx, 1);
 
-    return res.send({message: `deleted`, deleted: book});    
+    return res.send({message: `deleted`, deleted: book});
 });
 
 app.listen(PORT, () => {
