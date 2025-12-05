@@ -1,35 +1,15 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Header from './components/Header.jsx';
+import SearchBar from './components/SearchBar.jsx';
+import BookList from './components/BookList.jsx';
+import BookForm from './components/BookForm.jsx';
+import Footer from './components/Footer.jsx';
+import './index.css';
 
-function App() {
-  const [count, setCount] = useState(0)
+const sample_books = [
+  {id: 0, title: 'The Great Gatsby', author: 'F. Scott Fitzgrald', year: '1925', genre: 'Fiction'},
+  { id: 1, title: '1984', author: 'George Orwell', year: '1949', genre: 'Dystopian' },
+];
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+function App(){
+  const books = sample_books;
 }
-
-export default App
