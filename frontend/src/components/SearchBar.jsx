@@ -1,4 +1,8 @@
-function SearchBar() {
+function SearchBar({ value, onChange }) {
+  const handleChange = (e) => {
+    onChange(e.target.value);
+  };
+
   return (
     <div className="search-bar">
       <label htmlFor="search">Search by title or author</label>
@@ -6,6 +10,8 @@ function SearchBar() {
         id="search"
         type="text"
         placeholder="Search books..."
+        value={value}
+        onChange={handleChange}
       />
     </div>
   );

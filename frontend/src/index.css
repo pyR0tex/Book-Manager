@@ -213,6 +213,17 @@ body {
   border-top: 1px solid #333;
 }
 
+.error-message {
+  color: #ff6b6b;
+  font-size: 0.9rem;
+}
+
+.empty-state {
+  color: #aaaaaa;
+  font-style: italic;
+}
+
+
 /* RESPONSIVE TWEAK */
 @media (min-width: 768px) {
   .main-content {

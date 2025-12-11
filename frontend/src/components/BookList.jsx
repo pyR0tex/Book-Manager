@@ -1,14 +1,19 @@
 import BookCard from './BookCard.jsx';
 
-function BookList({ books }) {
+function BookList({ books, onEdit, onDelete }) {
   if (!books || books.length === 0) {
-    return <p className="empty-state">No books to display.</p>;
+    return <p className="empty-state">No books found. Try adding one!</p>;
   }
 
   return (
     <section className="book-list">
       {books.map((book) => (
-        <BookCard key={book.id} book={book} />
+        <BookCard
+          key={book.id}
+          book={book}
+          onEdit={onEdit}
+          onDelete={onDelete}
+        />
       ))}
     </section>
   );

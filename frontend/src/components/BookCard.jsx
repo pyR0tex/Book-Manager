@@ -1,5 +1,5 @@
-function BookCard({ book }) {
-  const { title, author, year, genre } = book;
+function BookCard({ book, onEdit, onDelete }) {
+  const { id, title, author, year, genre } = book;
 
   return (
     <article className="book-card">
@@ -9,8 +9,10 @@ function BookCard({ book }) {
         <span>{year}</span> · <span>{genre}</span>
       </p>
       <div className="book-actions">
-        <button>Edit</button>
-        <button className="delete-button">Delete</button>
+        <button onClick={() => onEdit(book)}>Edit</button>
+        <button className="delete-button" onClick={() => onDelete(id)}>
+          Delete
+        </button>
       </div>
     </article>
   );
